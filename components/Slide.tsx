@@ -10,22 +10,22 @@ const Slide = ({ post }: Props) => {
     return (
         <div className="grid md:grid-cols-2 md:gap-5">
             <div className="image">
-                <Link href={"/"}>
+                <Link href={`/posts/${post.id}`}>
                     <Image src={post.img} width={600} height={600} alt="" />
                 </Link>
             </div>
             <div className="info flex flex-col justify-center">
                 <div className="cat">
-                    <Link href={"/"} className="text-orange-600 hover:text-orange-800">
+                    <Link href={`/posts/${post.id}`} className="text-orange-600 hover:text-orange-800">
                         {post.category}
                     </Link>
-                    <Link href={"/"} className="text-gray-800 hover:text-gray-600">
+                    <Link href={`/posts/${post.id}`} className="text-gray-800 hover:text-gray-600">
                         - {post.published}
                     </Link>
                 </div>
                 <div className="title">
                     <Link
-                        href={"/"}
+                        href={`/posts/${post.id}`}
                         className="text-3xl font-bold text-gray-800 hover:text-gray-600 md:text-5xl"
                     >
                         {post.title}

@@ -22,7 +22,17 @@ const Section3 = () => {
             <h1 className="py-12 text-center text-4xl font-bold">Most Popular</h1>
 
             {/* swiper */}
-            <Swiper modules={[Pagination, A11y]} slidesPerView={2} pagination={{ clickable: true }}>
+            <Swiper
+                modules={[Pagination, A11y]}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                }}
+                pagination={{ clickable: true }}
+            // slidesPerView={2}
+            >
                 {posts.map((post: PostType) => {
                     return (
                         <SwiperSlide key={post.id}>
@@ -45,22 +55,22 @@ function Post({ post }: PostProps) {
         <div className="grid gap-5 p-4" id="popular">
             <div className="mx-3 px-5 shadow-xl">
                 <div className="images">
-                    <Link href={"#popular"}>
+                    <Link href={`/posts/${post.id}`}>
                         <Image src={post.img} width={500} height={350} alt="" />
                     </Link>
                 </div>
                 <div className="info flex flex-col justify-center py-4">
                     <div className="cat">
-                        <Link href={"#popular"} className="text-orange-600 hover:text-orange-800">
+                        <Link href={`/posts/${post.id}`} className="text-orange-600 hover:text-orange-800">
                             {post.category}
                         </Link>
-                        <Link href={"#popular"} className="text-gray-800 hover:text-gray-600">
+                        <Link href={`/posts/${post.id}`} className="text-gray-800 hover:text-gray-600">
                             - {post.published}
                         </Link>
                     </div>
                     <div className="title">
                         <Link
-                            href={"#popular"}
+                            href={`/posts/${post.id}`}
                             className="text-xl font-bold text-gray-800 hover:text-gray-600 md:text-4xl"
                         >
                             {post.title}

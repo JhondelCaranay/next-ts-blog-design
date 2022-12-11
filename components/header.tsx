@@ -9,7 +9,7 @@ const Header = () => {
                     <input type="text" className="input-text" placeholder="Search..." />
                 </div>
                 <div className="w-80 shrink sm:order-2">
-                    <a className="text-3xl font-bold uppercase">Design</a>
+                    <Link href={"/"} className="text-3xl font-bold uppercase">Design</Link>
                 </div>
                 <div className="order-3 flex w-96 justify-center">
                     <div className="flex gap-6">
